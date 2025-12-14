@@ -4,39 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interior Studio Pune</title>
+
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3efe9; /* soft aesthetic beige */
+            color: #333;
         }
         header {
-            background: #222;
+            background: linear-gradient(135deg, #2e2e2e, #1a1a1a); /* modern dark gradient */
             color: white;
-            padding: 20px;
+            padding: 30px 20px;
             text-align: center;
+            position: relative;
+            letter-spacing: 1px;
         }
         nav {
-            background: #444;
-            padding: 10px;
+            background: #3b3b3b;
+            padding: 12px;
             text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         }
         nav a {
-            color: white;
-            margin: 0 15px;
+            color: #f5f5f5;
+            margin: 0 18px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            transition: 0.3s;
         }
+        nav a:hover { color: #e6c9a8; }
         .hero {
-            background: url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg') no-repeat center/cover;
-            height: 350px;
+            background: url('https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg') no-repeat center/cover;
+            height: 380px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 2rem;
+            font-size: 2.4rem;
             font-weight: bold;
-            text-shadow: 2px 2px 5px #000;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
         }
         .section {
             padding: 40px;
@@ -46,42 +55,111 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 25px;
         }
         .card {
-            background: white;
-            width: 280px;
-            border-radius: 10px;
+            background: #ffffff;
+            width: 300px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
         }
         .card img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
         }
-        .card h3 {
-            margin: 15px 0;
+        /* Styles for the Enquiry Form */
+        #enquiry-form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        #enquiry-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #555;
+        }
+        #enquiry-form input[type="text"],
+        #enquiry-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+        #enquiry-form button {
+            background-color: #3b3b3b;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        #enquiry-form button:hover {
+            background-color: #555;
+        }
+        /* Image upload styles (retained from previous request) */
+        .upload-section {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        #customer-image-display {
+            margin-top: 30px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            display: inline-block;
+            max-width: 80%;
+            height: auto;
+            max-height: 400px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        #customer-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
         footer {
-            margin-top: 40px;
-            background: #222;
-            color: white;
+            margin-top: 50px;
+            background: #2b2b2b;
+            color: #e0e0e0;
             text-align: center;
-            padding: 15px;
+            padding: 20px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Interior Studio Pune</h1>
-        <p>Attractive Window Curtains • Stylish Sofas • Complete Home Interior Solutions</p>
+
+        <p>Attractive Curtains • Premium Sofas • Bed Panels • Full Home Interior</p>
     </header>
 
     <nav>
         <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+        <a href="#services">Interior Gallery</a>
+        <a href="#upload">Demo Upload</a>
+        <a href="#contact">Contact Us</a>
     </nav>
 
     <div class="hero" id="home">
@@ -89,37 +167,140 @@
     </div>
 
     <div class="section" id="services">
-        <h2>Our Interior Services</h2>
-        <p>We provide service to all regions in Pune</p>
+        <h2>Our Interior Gallery</h2>
+        <p>Premium designs for your complete home</p>
 
         <div class="services">
             <div class="card">
-                <img src="/mnt/data/A_photograph_showcases_a_living_space_featuring_a_.png" alt="Curtains" />
-                <h3>Attractive Window Curtains</h3>
-            </div>
-
-            <div class="card">
-                <img src="/mnt/data/A_photograph_showcases_a_contemporary_living_room_.png" alt="Sofa" />
+                <img src="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg" alt="Sofa">
                 <h3>Premium Sofa Designs</h3>
             </div>
 
             <div class="card">
-                <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" alt="Interior" />
-                <h3>Complete Interior Work</h3>
+                <img src="https://images.pexels.com/photos/2089698/pexels-photo-2089698.jpeg" alt="Kitchen">
+                <h3>Modular Kitchen</h3>
             </div>
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" alt="Bed Panel">
+                <h3>Bed Panel Designs</h3>
+            </div>
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/1457847/pexels-photo-1457847.jpeg" alt="Wardrobe">
+                <h3>Modern Wardrobes</h3>
+            </div>
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/3705525/pexels-photo-3705525.jpeg" alt="Wall Decor">
+                <h3>Wall Decoration</h3>
+            </div>
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg" alt="TV Unit">
+                <h3>TV Unit Designs</h3>
+            </div>
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/279719/pexels-photo-279719.jpeg" alt="Interior">
+                <h3>Full Home Interior</h3>
+            </div>
+
+            <div class="card">
+                <img src="https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg" alt="Office Interior">
+                <h3>Office Interior</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="upload">
+        <h2>See Your Home with a New Look</h2>
+        <p>Upload an image of your home space to visualize potential interior changes.</p>
+
+        <div class="upload-section">
+            <input type="file" id="image-upload" accept="image/*" onchange="previewImage(event)">
+            <p style="margin-top: 10px; font-style: italic;">(The image will only be visible to you)</p>
+        </div>
+
+        <div id="customer-image-display">
+            <img id="customer-image" src="" alt="Customer Uploaded Image" style="display:none;">
         </div>
     </div>
 
     <div class="section" id="contact">
         <h2>Contact Us</h2>
-        <p><strong>Phone:</strong> 8208811046</p>
-        <p><strong>Email:</strong> thiteswapnil1212@gmail.com</p>
-        <p>We are always ready to design your dream home.</p>
+        <p>Fill out the form below for a quick response!</p>
+        
+        <form id="enquiry-form" onsubmit="handleFormSubmission(event)">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="contact-number">Contact Number:</label>
+            <input type="text" id="contact-number" required>
+
+            <label for="query">Your Enquiry/Details:</label>
+            <textarea id="query" rows="4" required></textarea>
+
+            <button type="submit">Submit Enquiry via Email</button>
+        </form>
+        <p style="margin-top: 30px;">
+            If the form does not open your email client, you can contact us directly:<br>
+            <strong>Phone:</strong> 8208811046<br>
+            <strong>Email:</strong> thiteswapnil1212@gmail.com
+        </p>
+        <p>We are always ready to design your dream home.<br><br><strong>Owner:</strong> MR. GOVIND BALIRAM THITE</p>
     </div>
 
     <footer>
         © 2025 Interior Studio Pune - All Rights Reserved
     </footer>
 
+    <script defer>
+        // Image Preview Function (retained)
+        function previewImage(event) {
+            const imageElement = document.getElementById('customer-image');
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imageElement.src = e.target.result;
+                    imageElement.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                imageElement.src = "";
+                imageElement.style.display = 'none';
+            }
+        }
+        
+        // NEW Form Submission Function
+        function handleFormSubmission(event) {
+            // Prevent the default form submission (which reloads the page)
+            event.preventDefault(); 
+
+            // 1. Get Form Values
+            const name = document.getElementById('name').value;
+            const number = document.getElementById('contact-number').value;
+            const query = document.getElementById('query').value;
+
+            // 2. Format the Email Subject and Body
+            const recipient = 'thiteswapnil1212@gmail.com';
+            const subject = encodeURIComponent(`New Interior Enquiry from ${name}`);
+            
+            // Use line breaks (%0A) for readability in the email body
+            const body = encodeURIComponent(
+                `A new customer enquiry has been submitted through the website form.\n\n` +
+                `Customer Name: ${name}\n` +
+                `Contact Number: ${number}\n\n` +
+                `--- Customer Query ---\n` +
+                `${query}`
+            );
+
+            // 3. Create the mailto link and redirect
+            const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
 </body>
 </html>
